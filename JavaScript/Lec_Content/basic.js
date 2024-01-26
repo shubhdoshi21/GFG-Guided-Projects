@@ -130,3 +130,21 @@ const sumArrow = (a, b) => a + b; // automatically returns a + b;
 // immutable object - not changable - string
 
 // polyfills, machine coding interview problems & asynchronous javascript --> imp for interview
+
+let person = {
+  name: "Alice",
+  age: 30,
+  greet() {
+    console.log(
+      `Hello, my name is ${this.name} and I'm ${this.age} years old.`
+    );
+  },
+};
+let employee = {
+  salary: 50000,
+};
+employee._proto_ = person;
+console.log(employee.salary);
+employee.greet();
+console.log(employee.hasOwnProperty("salary"));
+console.log(employee.hasOwnProperty("name"));
